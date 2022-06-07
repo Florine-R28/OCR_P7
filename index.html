@@ -11,24 +11,24 @@
     <header class="header">
         <a id="logo" aria-label="Les petits plats" href="index.html">
           <img alt="Les plats plats Home page" class="logo_top" src="assets/logo.svg"/>
-          <h1>Les petits plats</h1>
         </a>
     </header>
 
-    <main>
+    <main class="container">
+
       <!--search bar-->
-      <div class="search_bar">
-        <p>Rechercher une recette</p>
-        <i class="fas fa-map-marker-alt"></i>
-      </div>
+      <section class="search_bar row">
+        <input class="search_bar_input col-xs-11" placeholder="Rechercher une recette" type="text" />
+				  <button class="search_bar_submit col-xs-1" type="submit">
+					  <i class="far fa-search"></i>
+				  </button>
+      </section>
 
-      </div>
+      <!--dropdown menu-->
+      <div></div>
 
-       <!--dropdown menu-->
-       <div></div>
-
-       <!--recipe container-->
-       <div></div>
+      <!--recipe container-->
+      <div></div>
     </main>
 
     <script src="scripts.js"></script>
