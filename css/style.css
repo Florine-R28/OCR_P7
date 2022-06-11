@@ -12,12 +12,6 @@ header {
     justify-content: space-around;
 }
   
-/*.research__bar {
-    display: flex;
-    height: 70px;
-    width: 100%;
-}*/
-  
 .search_bar_input {
     border-radius: 5px;
     border: none;
@@ -149,6 +143,7 @@ header {
 
 .card_name {
     margin: 0;
+    font-weight : bold;
 }
 
 .card_time {
@@ -161,7 +156,7 @@ header {
     justify-content: space-between;
     margin-left: 1rem;
     margin-right: 1rem;
-    /*font-size à rajouter*/
+    font-size: 10px;
 }
 
 .card_ingredients {
