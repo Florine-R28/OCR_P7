@@ -1,3 +1,4 @@
+/*header section*/
 header {
     text-align: center;
     font-size: 1.5rem;
@@ -5,6 +6,7 @@ header {
     margin-bottom: 2%;
 }
 
+/*search section*/
 .search_bar {
     display: flex;
     justify-content: space-around;
@@ -52,9 +54,126 @@ header {
     font-family: Montserrat, sans-serif;
 }
 
-nav {
+/*filters section*/
+/*.filter {
+    margin: 20px 0 20px 0;
+}*/
+  
+.filter_heading {
+    position: relative;
+    cursor: pointer;
+    width: 170px;
+    margin: 20px 20px 20px 0;
+}
+  
+.filter_heading input[type="text"]::placeholder {
+    color: #fff;
+    opacity: 0.5;
+}
+  
+.filter_select {
+    border: none;
+    color: #fff;
     width: 100%;
-    font-size: 18px;
-    position: sticky;
+    height: 69px;
+    text-align: start;
+    padding-left: 20px;
+    border-radius: 5px;
+    font-size: var(--fs-18);
+}
+  
+.filter__select:focus {
+    outline: none;
+}
+  
+.filter_blue {
+    background: #1E90FF;
+}
+
+.filter_green {
+    background: #00FA9A;
+}
+  
+.filter_red {
+    background: #FF0000 ;
+}
+
+.filter_arrow {
+    position: absolute;
+    right: 18px;
     top: 0;
-  }
+    bottom: 4rem;
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+  
+.filter_arrow--rotate {
+    transform: rotate(180deg);
+}
+  
+/*créer la partie pour la recherche dans les filtres*/
+
+/*recipes section*/
+.recipe_container {
+    display: flex;
+    /*grid-template-columns: 1fr;*/
+    gap: 20px;
+    width: 95%;
+    margin: 20px auto;
+    height: 350px;
+    border-radius: 5px;
+}
+
+.card {
+    width: 33%;
+}
+
+.card_head {
+    height: 50%;
+    background: grey;
+}
+
+.card_body {
+    height: 50%;
+    background-color: #D3D3D3;
+}
+
+.card_information {
+    justify-content: space-between;
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    margin: 1rem;
+}
+
+.card_name {
+    margin: 0;
+}
+
+.card_time {
+    margin: 0;
+}
+
+.card_details {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    /*font-size à rajouter*/
+}
+
+.card_ingredients {
+    height: 109px;
+    overflow: hidden;
+    width: 50%;
+    padding-right: 1rem;
+}
+
+.card_description {
+    height: 109px;
+    flex-wrap: wrap;
+    width: 50%;
+    overflow: hidden;
+}

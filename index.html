@@ -4,7 +4,10 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link href="css/style.css" rel="stylesheet" type="text/css" />
     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
     <title>Les petits plats</title>
   </head>
   <body>
@@ -18,52 +21,82 @@
 
       <!--search bar-->
       <section class="search_bar row">
-        <input class="search_bar_input col-xs-11" placeholder="Rechercher une recette" type="text" />
-				  <button class="search_bar_submit col-xs-1" type="submit">
-					  <i class="far fa-search"></i>
+        <input class="search_bar_input col-xs-12" placeholder="Rechercher une recette" type="text" />
+				  <button class="search_bar_submit" type="submit">
+					  <i class="fa-regular fa-magnifying-glass"></i>
 				  </button>
       </section>
 
       <!--dropdown menu-->
-      <section class="filter col-xs-12 ">
-        <div class="filter__custom-select" style="width: 170px">
-          <input class="filter__select filter__select--primary" type="button" data-color="primary" data-value="Ingrédients" value="Ingrédients">
-              <ul class="filter__custom-menu filter__custom-menu--primary">
-                <li class="filter__custom-option" data-color="primary">
-                  Crème de coco
+      <section class="filter row">
+        <div class="filter_heading col-xs-4">
+          <span class="filter_arrow">
+            <i class="fa-regular fa-angle-down"></i>
+          </span>
+          <input class="filter_select filter_blue" type="button" data-value="Ingrédients" value="Ingrédients">
+              <!-- JS<ul class="filter_menu filter_blue">
+                <li class="filter_option">
+                  Lait de coco
                 </li>
-                <li class="filter__custom-option" data-color="primary">
-                  Glaçons
+                <li class="filter_option">
+                  Sucre
                 </li>
-              </ul>
+              </ul>-->
         </div>
 
-        <div class="filter__custom-select" style="width: 170px">
-          <input class="filter__select filter__select--success" type="button" data-color="success" data-value="Appareil" value="Appareil">
-          <ul class="filter__custom-menu filter__custom-menu--success">
-            <li class="filter__custom-option" data-color="success">
+        <div class="filter_heading col-xs-4">
+          <span class="filter_arrow">
+            <i class="fa-regular fa-angle-down"></i>
+          </span>
+          <input class="filter_select filter_green" type="button" data-value="Appareil" value="Appareil">
+          <!-- JS <ul class="filter__custom-menu filter_green">
+            <li class="filter__option" >
               Blender
             </li>
-          </ul>
+          </ul>-->
         </div>
 
-        <div class="filter__custom-select" style="width: 170px">
-          <input class="filter__select filter__select--danger" type="button" data-color="danger" data-value="Ustensiles" value="Ustensiles">
-          <ul class="filter__custom-menu filter__custom-menu--danger">
-            <li class="filter__custom-option" data-color="danger">
+        <div class="filter_heading col-xs-4">
+          <span class="filter_arrow">
+            <i class="fa-regular fa-angle-down"></i>
+          </span>
+          <input class="filter_select filter_red" type="button" data-value="Ustensiles" value="Ustensiles">
+          <!-- JS <ul class="filter__custom-menu filter_red">
+             <li class="filter_option">
               Cuillère à soupe
             </li>
-            <li class="filter__custom-option" data-color="danger">
+            <li class="filter_option">
               Presse citron
             </li>
-            <li class="filter__custom-option" data-color="danger">Verres</li>
-          </ul>
+          </ul>-->
         </div>
-      
       </section>
 
       <!--recipe container-->
-      <div></div>
+      <div id="recipe_container" class="recipe_container row">
+        <div class="card">
+          <div class="card_head"></div>
+          <div class="card_body">
+            <div class="card_information">
+              <p class="card_name">Limonade de Coco <!--à mettre en gras--></p>
+              <p class="card_time">10 min</p>
+            </div>
+            <div class="card_details">
+              <ul class="card_ingredients">
+                <li class="filter_option">
+                  Lait de coco: <!--à mettre en gras--> + qté + gr
+                </li>
+                <li class="filter_option">
+                  Sucre
+                </li>
+              </ul>
+              <p class="card_description">
+                Mettre les glaçons à votre goût dans le blender, ajouter le lait
+              </p>
+            </div> 
+          </div>
+        </div>
+        
     </main>
 
     <script src="scripts.js"></script>
