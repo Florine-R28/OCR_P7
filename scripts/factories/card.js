@@ -10,7 +10,7 @@ function cardFactory(cardData){
                 <a href='recipes.js?id=${id}' class="card_head"></a>
                 <div class="card_body">
                     <div class="card_information">
-                        <p class="card_name">${name}Limonade de Coco <!--à mettre en gras--></p>
+                        <p class="card_name">${name}</p>
                         <p class="card_time">${time} min</p>
                     </div>
                     <div class="card_details">
