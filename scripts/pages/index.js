@@ -1,8 +1,8 @@
 //step 1 : create an empty model
-async function displayData(recipes) {
-    const recipeSection = document.getElementById("recipe_container");
+function displayData(recipesData) {
+    const recipeSection = document.getElementById("recipesContainer");
 
-    recipes.forEach((cardData) => {
+    recipesData.forEach((cardData) => {
         const recipeModel = cardFactory(cardData); 
         const recipeCardDOM = recipeModel.getRecipeCardDOM();
         recipeSection.appendChild(recipeCardDOM);
@@ -10,9 +10,8 @@ async function displayData(recipes) {
 }
 
 //step 2 : retrieve the data x insert it into the empty slots
-async function init() {
-    const { recipes } = await getRecipes(); 
-    displayData(recipes);
+function init() {
+    displayData(recipes);/*de recipes.js*/
 }
 
 //step 3 : start it all

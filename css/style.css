@@ -81,15 +81,15 @@ header {
 }
   
 .filter_blue {
-    background: #1E90FF;
+    background: #3282F7;
 }
 
 .filter_green {
-    background: #00FA9A;
+    background: #68D9A4;
 }
   
 .filter_red {
-    background: #FF0000 ;
+    background: #ED6454;
 }
 
 .filter_arrow {
@@ -109,18 +109,17 @@ header {
 /*créer la partie pour la recherche dans les filtres*/
 
 /*recipes section*/
-.recipe_container {
+.recipesContainer {
     display: flex;
-    /*grid-template-columns: 1fr;*/
     gap: 20px;
-    width: 95%;
-    margin: 20px auto;
+    /*margin: 20px auto;*/
     height: 350px;
     border-radius: 5px;
 }
 
-.card {
-    width: 33%;
+.recipe_container {
+    width: 32%;
+    height: 100%;
 }
 
 .card_head {
@@ -133,7 +132,7 @@ header {
     background-color: #D3D3D3;
 }
 
-.card_information {
+.card_title {
     justify-content: space-between;
     display: flex;
     flex-direction: row;
@@ -156,7 +155,7 @@ header {
     justify-content: space-between;
     margin-left: 1rem;
     margin-right: 1rem;
-    font-size: 10px;
+    font-size: 7px;
 }
 
 .card_ingredients {
