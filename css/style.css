@@ -130,6 +130,7 @@ header {
 .card_body {
     height: 50%;
     background-color: #D3D3D3;
+    padding: 1rem;
 }
 
 .card_title {
@@ -137,7 +138,7 @@ header {
     display: flex;
     flex-direction: row;
     align-items: baseline;
-    margin: 1rem;
+    /*margin: 1rem;*/
 }
 
 .card_name {

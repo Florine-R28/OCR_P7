@@ -1,8 +1,8 @@
 function cardFactory(cardData){
-    //call data that we will use, stored in helpers/api.js
-    const {name, ingredients, time, description, ingredient, quantity, unit} = cardData;
+    //call data that we will use, stored in index.js
+    const {name, ingredients, time, description} = cardData;
 
-    //ne prend qu'une seule carte de recette
+    //create just one recipe
     function getRecipeCardDOM() {
         const recipeContainer = document.createElement('div'); 
         recipeContainer.classList.add('recipe_container');
@@ -34,112 +34,44 @@ function cardFactory(cardData){
 
         const cardTime = document.createElement('p');
         cardTime.classList.add('card_time');
-        cardTime.textContent = time; 
-        cardTime.innerHTML = `min`;
+        cardTime.textContent = `${time} min`; 
 
-        cardBody.appendChild(cardTime);
+        cardTitle.appendChild(cardTime);
 
         //
         const cardDetails = document.createElement('div');
         cardDetails.classList.add('card_details');
 
-        cardBody.appendChild(cardDetails);
-
         //ingredients x description
-        const cardIngredients = document.createElement('ul');
-        cardIngredients.classList.add('card_ingredients');
-        cardIngredients.textContent = ingredients; 
+        const ingredientsList = document.createElement('ul');
+        ingredientsList.classList.add('card_ingredients'); 
 
-        cardDetails.appendChild(cardIngredients);
+        ingredients.forEach((ingredient) => {
+            const ingredientslistElement = document.createElement('li');
+            ingredientslistElement.classList.add('filter_option');
 
-        const listCard = document.createElement('li');
-        listCard.classList.add('filter_option');
+            //ingredient
+            const ingredientComponent = document.createElement('span');
+            ingredientComponent.textContent = `${ingredient.ingredient}${ingredient.quantity ? ":" : ""} `;
+            
+            //quantity x unit
+            const quantityComponent = document.createElement('span');
+            quantityComponent.textContent = `${ingredient.quantity ?? ""} ${ingredient.unit ?? ""}`;
 
-        const ingredientComponent = document.createElement('div');
-                ingredientComponent.textContent = ingredient;
+            ingredientslistElement.appendChild(quantityComponent);
+            ingredientslistElement.insertBefore(ingredientComponent, quantityComponent);
 
-                cardIngredients.appendChild(ingredientComponent);
-                listCard.innerHTML = ':';
+            ingredientsList.appendChild(ingredientslistElement);
+        })
 
-                const quantityComponent = document.createElement('div');
-                quantityComponent.textContent = quantity;
-
-                listCard.appendChild(quantityComponent);
-
-                const unitComponent = document.createElement('div');
-                unitComponent.textContent = unit; 
-
-                listCard.appendChild(unitComponent);
-
-        /*function componentFactory (cardComponent){
-            const {ingredient, quantity, unit} = cardComponent;
-            if (cardComponent.toLowerCase === fasle) {
-                cardComponent.toLowerCase()
-            } else {
-                return cardComponent;
-            }
-        
-            function getIngredientsCardDOM() {
-                const ingredientComponent = document.createElement('div');
-                ingredientComponent.textContent = ingredient;
-
-                listCard.appendChild(ingredientComponent);
-                listCard.innerHTML = ':';
-
-                const quantityComponent = document.createElement('div');
-                quantityComponent.textContent = quantity;
-
-                listCard.appendChild(quantityComponent);
-
-                const unitComponent = document.createElement('div');
-                unitComponent.textContent = unit; 
-
-                listCard.appendChild(unit);
-            /*}
-        }
-
-        cardIngredients.forEach((cardComponent) => {
-            const componentModel = componentFactory(cardComponent); 
-            const ingredientsCardDOM = componentModel.getIngredientsCardDOM();
-            cardIngredients.appendChild(ingredientsCardDOM);
-        });*/
-
-            /*ingredients.foreach (let i = 0, i < xx ; i++){
-                
-                }
-            }
-            return xx; 
-        }*/
-        // quand on arrive dans les ingredients, il faut afficher "ingredient : quantité et unité" jusqu'à ce qu'il n'y en est plus
-        /*boucle for à faire*/
-
-        cardIngredients.appendChild(listCard); 
+        cardDetails.appendChild(ingredientsList); 
 
         const instruction = document.createElement('p');
         instruction.classList.add('card_description');
         instruction.textContent = description;
 
         cardDetails.appendChild(instruction); 
-
-        /*const patternHomePage = `
-                <div class="card_head"></div>
-                <div class="card_body">
-                    <div class="card_information">
-                        <p class="card_name">${name}</p>
-                        <p class="card_time">${time} min</p>
-                    </div>
-                    <div class="card_details">
-                        <ul class="card_ingredients">
-                            <li class="filter_option">
-                                Lait de coco: <!--à mettre en gras--> + qté + gr
-                             </li>                           
-                        </ul>                       
-                        <p class="card_description"></p>
-                    </div> 
-                </div>
-        `*/
-
-        /*article.innerHTML = patternHomePage;*/
+        cardBody.appendChild(cardDetails);
 
         return (recipeContainer);
     }

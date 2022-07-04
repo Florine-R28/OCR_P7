@@ -1,9 +1,30 @@
-//filter les ingrédients dans le tableau recipes
-const recipesFilter = recipes.filter(ingredients)
-console.log(recipesFilter)
+//retrieve data from dropdown menu
+const {ingredients, appliance, ustensils} = dropdonwData; 
+console.log(dropdonwData)
 
-// filter pour n'avoir que les ingrédients (sans quantité et unité)
+//ingredients dropdown
+/*const ingredientsList = [
+    ...new Set(dropdonwData.map((recipe) =>
+        recipe.ingredients.map((ingredient) =>
+            ingredient.toLowerCase()
+            )
+        )
+    ),
+];
+console.log(ingredientsList)
 
-// créer un tableau 
+//click in the toggle
 
-//le retourner 
+ingredientsList.addEventListener("click", xx) {
+    if () {
+
+    } else {
+        return ""
+    }
+}*/
+
+//appliance dropdown
+let applianceDropdown = dropdonwData.map(el => appliance)
+
+//ustensils dropdown
+let ustensilsDropdown = dropdonwData.map(el => ustensils)
