@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr">
   <head>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <link href="css/style.css" rel="stylesheet" type="text/css" />
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -20,9 +20,9 @@
     <main class="container">
 
       <!--search bar-->
-      <section class="search_bar row">
-        <input class="search_bar_input col-xs-11" placeholder="Rechercher une recette" type="text" />
-				  <button class="search_bar_submit col-xs-1" type="submit">
+      <section class="search_bar">
+        <input class="search_bar_input col-xs-10" placeholder="Rechercher une recette" type="text" />
+				  <button class="search_bar_submit col-xs-2" type="submit">
 					  <img alt="" src="assets/research_glass.svg"/>
 				  </button>
       </section>
@@ -32,24 +32,19 @@
       <section class="filter row" id="filterSection">
         <ul class="filter-nav filter_heading col-xs-12">
           <li class="filter-item dropdowm col-xs-4">
-            <a class="filter-link dropdown-toggle filter_blue filter_select" href="#" id="filterbardrop" data-toggle="dropdown">Ingredients</a>
-            <div class="dropdown-menu">
-              <a class="dropdown-item" href="#">Lait de coco</a>
-            </div>
+            <!--input-->
+            <a class="filter-link dropdown-toggle filter_blue filter_select" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">Ingredients</a>
+            <ul class="dropdown-menu" id="ingredientsTagsList" aria-labelledby="dropdownMenuLink"></ul>
           </li>
 
           <li class="filter-item dropdowm col-xs-4">
-            <a class="filter-link dropdown-toggle filter_green filter_select" href="#" id="filterbardrop" data-toggle="dropdown">Appareils</a>
-            <div class="dropdown-menu">
-              <a class="dropdown-item" href="#">Lait de coco</a>
-            </div>
+            <a class="filter-link dropdown-toggle filter_green filter_select" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">Appareils</a>
+            <ul class="dropdown-menu" id="applianceTagsList" aria-labelledby="dropdownMenuLink"></ul>
           </li>
 
           <li class="filter-item dropdowm col-xs-4">
-            <a class="filter-link dropdown-toggle filter_red filter_select" href="#" id="filterbardrop" data-toggle="dropdown">Ustensiles</a>
-              <div class="dropdown-menu">
-                <a class="dropdown-item" href="#">Lait de coco</a>
-              </div>
+            <a class="filter-link dropdown-toggle filter_red filter_select" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">Ustensiles</a>
+              <ul class="dropdown-menu" id="ustensilsTagsList" aria-labelledby="dropdownMenuLink"></ul>
           </li> 
         </ul>
       </section>
@@ -59,7 +54,9 @@
 
     </main>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
     <script src ="data/recipes.js"></script>
+    <script src="scripts/helpers/recipes.js"></script>
     <script src="scripts/factories/card.js"></script>
     <script src="scripts/factories/dropdown.js"></script>
     <script src="scripts/pages/index.js"></script>

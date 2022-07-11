@@ -12,6 +12,9 @@ function displayData(recipesData) {
 //step 2 : retrieve the data x insert it into the empty slots
 function init() {
     displayData(recipes);/*de recipes.js*/
+    displayIngredientsTagList(getAllIngredients());
+    displayApplianceTagsList(getAllApliance());
+    displayUstensilsTagsList(getAllUstensils());
 }
 
 //step 3 : start it all
