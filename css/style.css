@@ -78,6 +78,11 @@ header {
     padding: 2rem 0rem 2rem 1.3rem;
     border-radius: 5px;
     font-size: var(--fs-18);
+    text-decoration: none;
+}
+
+.filter_select:hover {
+    color: #fff;
 }
   
 .filter_select:focus {
@@ -105,11 +110,42 @@ header {
     justify-content: space-between;
 }
   
-.dropdown-toggle--rotate {
+/*.dropdown-toggle--rotate {
     transform: rotate(180deg);
 }
+
+.dropdown-menu {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    position: absolute;
+    top: 65px;
+    width: 60%;
+    max-height: 360px;
+    overflow: hidden;
+    border-radius: 0 0 5px 5px; 
+}
+
+.dropdown-menu.show {
+    display: none;
+}*/
+
+.dropdown_menu_blue {
+    background: #3282F7;
+}
+
+.dropdown_menu_green {
+    background: #68D9A4;
+}
   
-/*créer la partie pour la recherche dans les filtres*/
+.dropdown_menu_red {
+    background: #ED6454;
+}
+
+.dropdown-item {
+    color: #fff;
+}
+
 
 /*recipes section*/
 .recipesContainer {

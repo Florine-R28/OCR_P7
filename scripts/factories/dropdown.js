@@ -140,7 +140,3 @@ ingredientsList.addEventListener("click", xx) {
         return ""
     }
 }*/
-
-//appliance dropdown
-
-//ustensils dropdown*/
