@@ -52,6 +52,7 @@ function cardFactory(cardData){
 
             //ingredient
             const ingredientComponent = document.createElement('span');
+            ingredientComponent.classList.add('filter_option_blod');
             ingredientComponent.textContent = `${ingredient.ingredient}${ingredient.quantity ? ":" : ""} `;
             
             //quantity x unit

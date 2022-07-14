@@ -146,6 +146,23 @@ header {
     color: #fff;
 }
 
+.filter_select_research {
+    border: none;
+    color: #84B4FA;
+    width: 100%;
+    height:70px;
+    padding: 2rem;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.filter-item_research {
+    cursor: pointer;
+    width: 55%;
+    margin: 20px 20px 20px 0;
+    display: flex; 
+}
+
 
 /*recipes section*/
 .recipesContainer {
@@ -159,17 +176,18 @@ header {
 .recipe_container {
     width: 32%;
     height: 100%;
+    border-radius: 5px;
 }
 
 .card_head {
     height: 50%;
-    background: grey;
+    background: #C7BEBE;
 }
 
 .card_body {
     height: 50%;
-    background-color: #D3D3D3;
-    padding: 1rem;
+    background-color: #E6E6E6;
+    padding: 1.3rem;
 }
 
 .card_title {
@@ -177,37 +195,43 @@ header {
     display: flex;
     flex-direction: row;
     align-items: baseline;
-    /*margin: 1rem;*/
+    margin-bottom: 1rem;
 }
 
 .card_name {
     margin: 0;
-    font-weight : bold;
 }
 
 .card_time {
     margin: 0;
+    font-weight: bold;
 }
 
 .card_details {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin-left: 1rem;
-    margin-right: 1rem;
-    font-size: 7px;
+    font-size: 0.7em;
+    line-height: normal;
 }
 
 .card_ingredients {
-    height: 109px;
+    height: 105px;
     overflow: hidden;
     width: 50%;
-    padding-right: 1rem;
+    list-style-type: none;
+    padding: 0;
+    flex-wrap: wrap;
+}
+
+.filter_option_blod {
+    font-weight: bold;
 }
 
 .card_description {
-    height: 109px;
+    height: 68px;
     flex-wrap: wrap;
     width: 50%;
     overflow: hidden;
+    text-overflow: ellipsis;
 }
