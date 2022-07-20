@@ -1,6 +1,7 @@
 //ingredients
 function displayIngredientsTagList(ingredients) {
     const ingredientsTagsList = document.getElementById('ingredientsTagsList');
+    ingredientsTagsList.innerHTML = "";
     ingredients.forEach((ingredient) => {
         const listElement = document.createElement('li'); 
 
@@ -12,6 +13,33 @@ function displayIngredientsTagList(ingredients) {
         ingredientsTagsList.appendChild(listElement);
     })
 }
+
+// filter by tags ingredients
+const dropdownMenuLink = document.getElementById("dropdownMenuLink");
+
+dropdownMenuLink.addEventListener('keyup', function(event){
+    if (event.target./*(event.target remplace dropdownMenuLink */value.length >= 3 /*pour récup la valeur tjs à jour*/) {
+        const ingredientsTags = getAllIngredients();/*stocké*/
+        const filteredIngredientsTags = ingredientsTags.filter((ingredientTag) => ingredientTag.includes(event.target.value.toLowerCase()));
+        displayIngredientsTagList(filteredIngredientsTags) /*rappelle de la fonction pour afficher la recherche*/
+    } else if (event.target.value.length === 0) {
+        displayIngredientsTagList(getAllIngredients());
+    }
+  })
+
+// show ingredient search
+//const dropdownMenuSearch = document.getElementById("dropdownMenuLink");
+
+//dropdownMenuSearch.addEventListener('focus', function(){
+    //if () {
+        //remplacer le placeholder
+        // ajouter le css
+//         dropdownMenuSearch.innerHTML = 'Rechercher un ingrédient';
+//         dropdownMenuSearch.classList.add('filter_select_research');
+//     } else {
+//         //ne rien faire 
+//     }
+//   })
 
 //appliance
 function displayApplianceTagsList(appliance) {
@@ -42,6 +70,7 @@ function displayUstensilsTagsList(ustensils) {
         ustensilsTagsList.appendChild(listElement);
     })
 }
+
 
 
 /*

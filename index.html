@@ -31,26 +31,20 @@
 
       <section class="filter row" id="filterSection">
         <ul class="filter-nav filter_heading col-xs-12">
-          <li class="filter-item dropdowm col-xs-4">
-            <!--input-->
-            <input
-              class="filter-link dropdown-toggle filter_blue filter_select"
-              type="button"
-              value="Ingrédients"
-              id="dropdownMenuLink"
-            />
-            <span href="#" data-bs-toggle="dropdown" aria-expanded="false" ></span>
-            <ul class="dropdown-menu dropdown_menu_blue" id="ingredientsTagsList" aria-labelledby="dropdownMenuLink"></ul>
+          <li class="filter-item dropdowm  dropdown-toggle col-xs-4" data-bs-toggle="dropdown" aria-expanded="false">
+            <input class=" filter_blue filter_select" placeholder="Ingrédients" id="dropdownMenuLink"/>
+            <!--voir pour placer "recherche un ingrédient"-->
+              <ul class="dropdown-menu dropdown_menu_blue" id="ingredientsTagsList" aria-labelledby="dropdownMenuLink"></ul>
           </li>
 
-          <li class="filter-item dropdowm col-xs-4">
-            <a class="filter-link dropdown-toggle filter_green filter_select" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">Appareils</a>
-            <ul class="dropdown-menu dropdown_menu_green" id="applianceTagsList" aria-labelledby="dropdownMenuLink"></ul>
+          <li class="filter-item dropdowm  dropdown-toggle col-xs-4" data-bs-toggle="dropdown" aria-expanded="false">
+            <input class=" filter_green filter_select" placeholder="Appareils" id="dropdownMenuLink"/>
+              <ul class="dropdown-menu dropdown_menu_green" id="applianceTagsList" aria-labelledby="dropdownMenuLink"></ul>
           </li>
 
-          <li class="filter-item dropdowm col-xs-4">
-            <a class="filter-link dropdown-toggle filter_red filter_select" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">Ustensiles</a>
-              <ul class="dropdown-menu dropdown_menu_red" id="ustensilsTagsList" aria-labelledby="dropdownMenuLink"></ul>
+          <li class="filter-item dropdowm  dropdown-toggle col-xs-4" data-bs-toggle="dropdown" aria-expanded="false">
+            <input class=" filter_red filter_select" placeholder="Ustensiles" id="dropdownMenuLink"/>
+            <ul class="dropdown-menu dropdown_menu_red" id="ustensilsTagsList" aria-labelledby="dropdownMenuLink"></ul>
           </li> 
         </ul>
 
