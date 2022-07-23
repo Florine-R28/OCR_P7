@@ -1,3 +1,7 @@
+const selectedIngredientsTags = []; 
+const seclectedUstensilsTags = [];
+const selectedAppliancesTags = [];
+
 //step 1 : create an empty model
 function displayData(recipesData) {
     const recipeSection = document.getElementById("recipesContainer");

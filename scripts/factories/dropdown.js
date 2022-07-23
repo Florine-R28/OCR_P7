@@ -1,3 +1,5 @@
+const dropdownMenuLink = document.getElementById("dropdownMenuLink");
+
 //ingredients
 function displayIngredientsTagList(ingredients) {
     const ingredientsTagsList = document.getElementById('ingredientsTagsList');
@@ -9,14 +11,18 @@ function displayIngredientsTagList(ingredients) {
         dropdownLinkElement.classList.add('dropdown-item');
         dropdownLinkElement.textContent = ingredient.toLowerCase();
 
+        dropdownLinkElement.addEventListener('click', function(event) {
+            selectedIngredientsTags.push(event.target.textContent)
+            //créer une fonction (ailleurs) pour boucler surl tableaux de tag pour afficher chaque tag (container)
+            //ici appeler cette fonction 
+        }) 
+
         listElement.appendChild(dropdownLinkElement);
         ingredientsTagsList.appendChild(listElement);
     })
 }
 
-// filter by tags ingredients
-const dropdownMenuLink = document.getElementById("dropdownMenuLink");
-
+//input filter for ingredients
 dropdownMenuLink.addEventListener('keyup', function(event){
     if (event.target./*(event.target remplace dropdownMenuLink */value.length >= 3 /*pour récup la valeur tjs à jour*/) {
         const ingredientsTags = getAllIngredients();/*stocké*/
@@ -44,6 +50,7 @@ dropdownMenuLink.addEventListener('keyup', function(event){
 //appliance
 function displayApplianceTagsList(appliance) {
     const applianceTagsList = document.getElementById('applianceTagsList');
+    applianceTagsList.innerHTML = "";
     appliance.forEach((appliance) => {
         const listElement = document.createElement('li'); 
 
@@ -56,9 +63,21 @@ function displayApplianceTagsList(appliance) {
     })
 }
 
+//input filter for appliance
+dropdownMenuLink.addEventListener('keyup', function(event){
+    if (event.target./*(event.target remplace dropdownMenuLink */value.length >= 3 /*pour récup la valeur tjs à jour*/) {
+        const applianceTags = getAllApliance();/*stocké*/
+        const filteredApplianceTags = applianceTags.filter((applianceTag) => applianceTag.includes(event.target.value.toLowerCase()));
+        displayApplianceTagList(filteredApplianceTags) /*rappelle de la fonction pour afficher la recherche*/
+    } else if (event.target.value.length === 0) {
+        displayApplianceTagList(getAllApliance());
+    }
+  })
+
 //ustensils
 function displayUstensilsTagsList(ustensils) {
     const ustensilsTagsList = document.getElementById('ustensilsTagsList');
+    ustensilsTagsList.innerHTML = "";
     ustensils.forEach((ustensil) => {
         const listElement = document.createElement('li'); 
 
@@ -148,24 +167,3 @@ const listenOnIngredientsItems = () => {
               <a class="dropdown-item-ingredients" href="#">Lait de coco</a>
             </div>
           </li>*/
-
-//ingredients dropdown
-/*const ingredientsList = [
-    ...new Set(dropdonwData.map((recipe) =>
-        recipe.ingredients.map((ingredient) =>
-            ingredient.toLowerCase()
-            )
-        )
-    ),
-];
-console.log(ingredientsList)
-
-//click in the toggle
-
-ingredientsList.addEventListener("click", xx) {
-    if () {
-
-    } else {
-        return ""
-    }
-}*/
