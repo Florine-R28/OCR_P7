@@ -17,8 +17,8 @@ function displayData(recipesData) {
 function init() {
     displayData(recipes);/*de recipes.js*/
     displayIngredientsTagList(getAllIngredients());
-    displayApplianceTagsList(getAllApliance());
-    displayUstensilsTagsList(getAllUstensils());
+    displayApplianceTagList(getAllApliance());
+    displayUstensilsTagList(getAllUstensils());
 }
 
 //step 3 : start it all

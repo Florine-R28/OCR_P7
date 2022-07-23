@@ -1,6 +1,7 @@
 const dropdownMenuLink = document.getElementById("dropdownMenuLink");
 
 //ingredients
+
 function displayIngredientsTagList(ingredients) {
     const ingredientsTagsList = document.getElementById('ingredientsTagsList');
     ingredientsTagsList.innerHTML = "";
@@ -48,7 +49,7 @@ dropdownMenuLink.addEventListener('keyup', function(event){
 //   })
 
 //appliance
-function displayApplianceTagsList(appliance) {
+function displayApplianceTagList(appliance) {
     const applianceTagsList = document.getElementById('applianceTagsList');
     applianceTagsList.innerHTML = "";
     appliance.forEach((appliance) => {
@@ -75,7 +76,7 @@ dropdownMenuLink.addEventListener('keyup', function(event){
   })
 
 //ustensils
-function displayUstensilsTagsList(ustensils) {
+function displayUstensilsTagList(ustensils) {
     const ustensilsTagsList = document.getElementById('ustensilsTagsList');
     ustensilsTagsList.innerHTML = "";
     ustensils.forEach((ustensil) => {
@@ -90,38 +91,18 @@ function displayUstensilsTagsList(ustensils) {
     })
 }
 
-
-
-/*
-function dropdonwFactory(filterData){
-    const filterSection = document.getElementById("filterSection");
-    const {ingredients, appliance, ustensils} = filterData;
-
-
-    //dropdown menu of all ingredients
-    function getTagsListCardDOM() {}
-
-        const listElement = document.createElement('li');
-
-        //filterNavBar.appendChild(dropdownMenu);
-
-    const dropdownLinkElement = document.createElement('a');
-    dropdownLinkElement.classList.add('dropdown-menu');
-
-    dropdownLinkElement.forEach((ingredients) => {
-        const ingredientsGlobalList = document.createElement('li');
-        //ingredientsGlobalList.classList.add('');
-        ingredientsGlobalList.textContent = `${ingredient.ingredient}`;
-    })
-
-    dropdownMenu.appendChild(dropdownItems);
-
-    return 
+//input filter for ustensils
+dropdownMenuLink.addEventListener('keyup', function(event){
+    if (event.target./*(event.target remplace dropdownMenuLink */value.length >= 3 /*pour récup la valeur tjs à jour*/) {
+        const ustensilsTags = getAllUstensils();/*stocké*/
+        const filteredUstensilsTags = ustensilsTags.filter((ustensilTag) => ustensilTag.includes(event.target.value.toLowerCase()));
+        displayUstenilsTagList(filteredUstensilsTags) /*rappelle de la fonction pour afficher la recherche*/
+    } else if (event.target.value.length === 0) {
+        displayUstenilsTagList(getAllUstensils());
     }
-    return {getTagsListCardDOM};
-}
+  })
 
-const toggleIngredients  = document.querySelector(".toggleIngredients");
+/*const toggleIngredients  = document.querySelector(".toggleIngredients");
 
 toggleIngredients.addEventListener("click", () => {
     if (toggleIngredients /*???)) {
@@ -157,13 +138,4 @@ const listenOnIngredientsItems = () => {
             createFiltersBar(selectedFiltersUnduplicated, recipes);
         });
     });
-};
-
-
-/*<ul class="filter-nav filter_heading col-xs-12">
-          <li class="filter-item dropdowm col-xs-4">
-            <a class="filter-link dropdown-toggle-ingredients filter_blue filter_select" href="#" id="filterbardrop" data-toggle="dropdown">Ingredients</a>
-            <div class="dropdown-menu">
-              <a class="dropdown-item-ingredients" href="#">Lait de coco</a>
-            </div>
-          </li>*/
+*/
