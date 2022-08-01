@@ -50,7 +50,7 @@ header {
    align-items: baseline;
 }
 
-.filter-nav {
+.filter_nav {
     list-style-type: none; 
     display: flex;
     flex-direction: row;
@@ -59,26 +59,30 @@ header {
   
 .filter-item {
     cursor: pointer;
-    width: 170px;
+    width: 15%;
     margin: 20px 20px 20px 0;
     display: flex;
 }
   
-.filter_heading input[type="text"]::placeholder {
-    color: #fff;
-    opacity: 0.5;
+#dropdownMenuLinkBlue::placeholder {
+    color: white;
+}
+
+#dropdownMenuLinkGreen::placeholder {
+    color: white;
+}
+
+#dropdownMenuLinkRed::placeholder {
+    color: white;
 }
   
 .filter_select {
     border: none;
-    color: #fff;
     width: 100%;
     height: 69px;
     text-align: start;
     padding: 2rem 0rem 2rem 1.3rem;
     border-radius: 5px;
-    font-size: var(--fs-18);
-    text-decoration: none;
 }
 
 .filter_select:hover {
@@ -103,11 +107,10 @@ header {
 
 .dropdown-toggle {
     top: 0;
-    display: flex;
     align-items: center;
-    height: 75%;
     padding-right: 20px;
     justify-content: space-between;
+    color: #fff;
 }
   
 /*.dropdown-toggle--rotate {
@@ -118,7 +121,7 @@ header {
     width: 60%;
 }
 
-.dropdown_container {
+.element.style {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -146,6 +149,7 @@ header {
 
 .dropdown-item {
     color: #fff;
+    
 }
 
 .filter_select_research {
@@ -158,7 +162,7 @@ header {
     text-decoration: none;
 }
 
-.filter-item_research {
+.filter_item_research {
     cursor: pointer;
     width: 55%;
     margin: 20px 20px 20px 0;

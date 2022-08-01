@@ -1,11 +1,17 @@
-const dropdownMenuLink = document.getElementById("dropdownMenuLink");
+
+let showSelectedTagsinHtml = document.getElementById("showSelectedTags");
+
+//dropdownMenu all link
+const dropdownMenuLinkBlue = document.getElementById("dropdownMenuLinkBlue");
+const dropdownMenuLinkGreen = document.getElementById("dropdownMenuLinkGreen");
+const dropdownMenuLinkRed = document.getElementById("dropdownMenuLinkRed");
 
 //ingredients
 
 function displayIngredientsTagList(ingredients) {
     const ingredientsTagsList = document.getElementById('ingredientsTagsList');
     ingredientsTagsList.innerHTML = "";
-    ingredients.forEach((ingredient) => {
+    ingredients.forEach((ingredient) => { 
         const listElement = document.createElement('li'); 
 
         const dropdownLinkElement = document.createElement('a');
@@ -14,8 +20,7 @@ function displayIngredientsTagList(ingredients) {
 
         dropdownLinkElement.addEventListener('click', function(event) {
             selectedIngredientsTags.push(event.target.textContent)
-            //créer une fonction (ailleurs) pour boucler surl tableaux de tag pour afficher chaque tag (container)
-            //ici appeler cette fonction 
+            showSelectedTags(); 
         }) 
 
         listElement.appendChild(dropdownLinkElement);
@@ -23,8 +28,18 @@ function displayIngredientsTagList(ingredients) {
     })
 }
 
+//onclick replace text
+dropdownMenuLinkBlue.addEventListener('click', function() {
+    dropdownMenuLinkBlue.placeholder = 'Rechercher un ingrédient';
+    //dropdownMenuLinkBlue.textContent = 'Rechercher un ingrédient';
+    dropdownMenuLinkBlue.classList.add('filter_select_research');
+    dropdownMenuLinkBlue.classList.add('col-xs-6');
+})
+
+
+
 //input filter for ingredients
-dropdownMenuLink.addEventListener('keyup', function(event){
+dropdownMenuLinkBlue.addEventListener('keyup', function(event){
     if (event.target./*(event.target remplace dropdownMenuLink */value.length >= 3 /*pour récup la valeur tjs à jour*/) {
         const ingredientsTags = getAllIngredients();/*stocké*/
         const filteredIngredientsTags = ingredientsTags.filter((ingredientTag) => ingredientTag.includes(event.target.value.toLowerCase()));
@@ -33,20 +48,6 @@ dropdownMenuLink.addEventListener('keyup', function(event){
         displayIngredientsTagList(getAllIngredients());
     }
   })
-
-// show ingredient search
-//const dropdownMenuSearch = document.getElementById("dropdownMenuLink");
-
-//dropdownMenuSearch.addEventListener('focus', function(){
-    //if () {
-        //remplacer le placeholder
-        // ajouter le css
-//         dropdownMenuSearch.innerHTML = 'Rechercher un ingrédient';
-//         dropdownMenuSearch.classList.add('filter_select_research');
-//     } else {
-//         //ne rien faire 
-//     }
-//   })
 
 //appliance
 function displayApplianceTagList(appliance) {
@@ -65,7 +66,7 @@ function displayApplianceTagList(appliance) {
 }
 
 //input filter for appliance
-dropdownMenuLink.addEventListener('keyup', function(event){
+dropdownMenuLinkGreen.addEventListener('keyup', function(event){
     if (event.target./*(event.target remplace dropdownMenuLink */value.length >= 3 /*pour récup la valeur tjs à jour*/) {
         const applianceTags = getAllApliance();/*stocké*/
         const filteredApplianceTags = applianceTags.filter((applianceTag) => applianceTag.includes(event.target.value.toLowerCase()));
@@ -92,7 +93,7 @@ function displayUstensilsTagList(ustensils) {
 }
 
 //input filter for ustensils
-dropdownMenuLink.addEventListener('keyup', function(event){
+dropdownMenuLinkRed.addEventListener('keyup', function(event){
     if (event.target./*(event.target remplace dropdownMenuLink */value.length >= 3 /*pour récup la valeur tjs à jour*/) {
         const ustensilsTags = getAllUstensils();/*stocké*/
         const filteredUstensilsTags = ustensilsTags.filter((ustensilTag) => ustensilTag.includes(event.target.value.toLowerCase()));
@@ -102,20 +103,7 @@ dropdownMenuLink.addEventListener('keyup', function(event){
     }
   })
 
-/*const toggleIngredients  = document.querySelector(".toggleIngredients");
-
-toggleIngredients.addEventListener("click", () => {
-    if (toggleIngredients /*???)) {
-        ingredients.forEach((ingredient) => {
-            return toggleIngredients.append(createDom("li", `${ingredient}`));
-        });
-    } else {
-        toggleIngredients.innerHTML = "";
-    }
-    listenOnIngredientsItems();
-});
-
-ingredientInput.addEventListener("keyup", (event) => {
+/*ingredientInput.addEventListener("keyup", (event) => {
     dropdown-item-ingredients.innerHTML = "";
     if (event.target.value.length >= 3) {
         const query = event.target.value.toLowerCase();
