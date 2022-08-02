@@ -32,11 +32,14 @@ function displayIngredientsTagList(ingredients) {
 dropdownMenuLinkBlue.addEventListener('click', function() {
     dropdownMenuLinkBlue.placeholder = 'Rechercher un ingrédient';
     //dropdownMenuLinkBlue.textContent = 'Rechercher un ingrédient';
-    dropdownMenuLinkBlue.classList.add('filter_select_research');
+    //dropdownMenuLinkBlue.setAttribute("class", "filter_select_research");
     dropdownMenuLinkBlue.classList.add('col-xs-6');
 })
 
-
+// function ChangeCSS()
+// {
+//     dropdownMenuLinkBlue.setAttribute("class", "filter_select_research");
+// }
 
 //input filter for ingredients
 dropdownMenuLinkBlue.addEventListener('keyup', function(event){
@@ -102,24 +105,10 @@ dropdownMenuLinkRed.addEventListener('keyup', function(event){
         displayUstenilsTagList(getAllUstensils());
     }
   })
-
-/*ingredientInput.addEventListener("keyup", (event) => {
-    dropdown-item-ingredients.innerHTML = "";
-    if (event.target.value.length >= 3) {
-        const query = event.target.value.toLowerCase();
-        const results = ingredients.filter((ingredient) => {
-            return ingredient.toLowerCase().includes(query);
-        });
-        results.forEach((result) => {
-            return ingredientWrapper.append(createDom("li", `${result}`, { class: "ingredient__item" }));
-        });
-    }
-    listenOnIngredientsItems();
-});
-
-const listenOnIngredientsItems = () => {
+ 
+/*const listenOnIngredientsItems = () => {
     const dropdown-item-ingredients = document.querySelectorAll(".dropdown-item-ingredients");
-    dropdown-item-ingredients.forEach((/*????) => {
+    dropdown-item-ingredients.forEach((????) => {
         ?????.addEventListener("click", () => {
             /*selectedFilters.push(????.textContent);
             const selectedFiltersUnduplicated = [...new Set(selectedFilters)];
