@@ -7,7 +7,8 @@ function showSelectedTags() {
     if (selectedIngredientsTags.length !== 0 /*ou > à, le tableau contient qqc*/){
         selectedIngredientsTags.forEach((selectedIngredientTag, index/*à quel position il est*/) => {
             const ingredientTagElement = document.createElement('span');
-            /*class*/
+            ingredientTagElement.classList.add('tags_item');
+            ingredientTagElement.classList.add('tags_item_blue');
             ingredientTagElement.innerHTML = selectedIngredientTag;
 
             const removeTagElement = document.createElement('span');
@@ -27,7 +28,8 @@ function showSelectedTags() {
     if (selectedApplianceTags.length !== 0 /*ou > à, le tableau contient qqc*/){
         selectedApplianceTags.forEach((selectedApplianceTag, index/*à quel position il est*/) => {
             const applianceTagElement = document.createElement('span');
-            /*class*/
+            applianceTagElement.classList.add('tags_item');
+            applianceTagElement.classList.add('tags_item_green');
             applianceTagElement.innerHTML = selectedApplianceTags;
 
             const removeTagElement = document.createElement('span');
@@ -47,7 +49,8 @@ function showSelectedTags() {
     if (selectedUstensilsTags.length !== 0 /*ou > à, le tableau contient qqc*/){
         selectedUstensilsTags.forEach((selectedUstensilsTag, index/*à quel position il est*/) => {
             const ustensilTagElement = document.createElement('span');
-            /*class*/
+            ustensilTagElement.classList.add('tags_item');
+            ustensilTagElement.classList.add('tags_item_red');
             ustensilTagElement.innerHTML = selectedUstensilsTag;
 
             const removeTagElement = document.createElement('span');

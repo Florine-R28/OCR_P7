@@ -45,6 +45,38 @@ header {
     font-family: Montserrat, sans-serif;
 }
 
+/*tags section*/
+.selectedtags {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 25px;
+    gap: 10px;
+  }
+  
+.tags_item {
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    color: #fff;
+    padding: 10px 20px;
+}
+
+.tags_item_blue {
+    background: #3282F7;
+}
+
+.tags_item_green {
+    background:#68D9A4;
+}
+
+.tags_item_red {
+    background: #ED6454;
+}
+
+.tags_name {
+    margin-right: 13px;
+}
+
 /*filters section*/
 .filter {
    align-items: baseline;
