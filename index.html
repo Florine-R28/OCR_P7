@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
+    <script src="https://kit.fontawesome.com/a488751955.js" crossorigin="anonymous"></script>
     <title>Les petits plats</title>
   </head>
   <body>
@@ -27,35 +27,31 @@
 				  </button>
       </section>
 
-      <!--show selected tags-->
-      <div id="showSelectedTag" class="selectedtags"></div>
+      <!--show selected tags   class="selectedtags"-->
+      <div id="showSelectedTag"></div>
 
       <!--dropdown menu-->
 
       <section class="filter row" id="filterSection">
         <ul class="filter_nav col-xs-12">
-          <li class="filter-item dropdowm col-xs-4">
-            <input class="dropdown-toggle filter_blue filter_select" data-bs-toggle="dropdown" placeholder="Ingrédients" id="dropdownMenuLinkBlue" aria-expanded="false" onclick="changeCSS"/>
-            <!--voir pour placer "recherche un ingrédient"-->
-              <ul class="dropdown-menu dropdown_menu_blue" id="ingredientsTagsList"></ul>
+          <li class="filter-item dropdowm filter_blue col-xs-4">
+              <input class="dropdown-toggle  filter_select" data-bs-toggle="dropdown" placeholder="Ingrédients" id="dropdownMenuLinkBlue" aria-expanded="false"/>
+              <i id="chevron_blue" class="fa-solid fa-chevron-down"></i>
+            <ul class="dropdown-menu dropdown_menu_blue" id="ingredientsTagsList"></ul>
           </li>
 
-          <li class="filter-item dropdown col-xs-4">
-              <input class="dropdown-toggle filter_green filter_select" data-bs-toggle="dropdown" placeholder="Appareils" id="dropdownMenuLinkGreen" aria-expanded="false"/>
+          <li class="filter-item dropdown filter_green col-xs-4">
+              <input class="dropdown-toggle filter_select" data-bs-toggle="dropdown" placeholder="Appareils" id="dropdownMenuLinkGreen" aria-expanded="false"/>
+              <i id="chevron_green" class="fa-solid fa-chevron-down"></i>
               <ul class="dropdown-menu dropdown_menu_green" id="applianceTagsList"></ul>
           </li>
 
-          <li class="filter-item dropdowm col-xs-4"  >
-            <input class="dropdown-toggle filter_red filter_select" data-bs-toggle="dropdown" placeholder="Ustensiles" id="dropdownMenuLinkRed" aria-expanded="false"/>
-            <ul class="dropdown-menu dropdown_menu_red" id="ustensilsTagsList"></ul></div>
+          <li class="filter-item dropdowm filter_red col-xs-4"  >
+            <input class="dropdown-toggle filter_select" data-bs-toggle="dropdown" placeholder="Ustensiles" id="dropdownMenuLinkRed" aria-expanded="false"/>
+            <i id="chevron_red" class="fa-solid fa-chevron-down"></i>
+            <ul class="dropdown-menu dropdown_menu_red" id="ustensilsTagsList"></ul>
           </li> 
         </ul>
-
-        <!--<ul>
-          <li class="filter_item_research dropdowm ">
-            <a class="filter-link dropdown-toggle filter_blue filter_select_research">Rechercher un ingrédient</a>
-          </li>
-        </ul-->
       </section>
 
       <!--recipe container-->
@@ -64,7 +60,7 @@
     </main>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
-    <script src ="data/recipes.js"></script>
+    <script src="data/recipes.js"></script>
     <script src="scripts/helpers/recipes.js"></script>
     <script src="scripts/helpers/selectedtags.js"></script>
     <script src="scripts/factories/card.js"></script>

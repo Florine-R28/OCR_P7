@@ -32,11 +32,22 @@ function cardFactory(cardData){
 
         cardTitle.appendChild(cardName);
 
+        const timeDiv = document.createElement('div');
+        timeDiv.classList.add('time_part');
+
+        const timeImage = document.createElement("img");
+        timeImage.src = "assets/time.svg";
+        timeImage.classList.add('timeImage');
+        timeImage.setAttribute("alt", "clock");
+
+        timeDiv.appendChild(timeImage);
+
         const cardTime = document.createElement('p');
         cardTime.classList.add('card_time');
         cardTime.textContent = `${time} min`; 
 
-        cardTitle.appendChild(cardTime);
+        timeDiv.appendChild(cardTime);
+        cardTitle.appendChild(timeDiv);
 
         //
         const cardDetails = document.createElement('div');

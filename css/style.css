@@ -59,6 +59,7 @@ header {
     border-radius: 5px;
     color: #fff;
     padding: 10px 20px;
+
 }
 
 .tags_item_blue {
@@ -75,6 +76,10 @@ header {
 
 .tags_name {
     margin-right: 13px;
+}
+
+.img_cross {
+    padding-left: 10px;
 }
 
 /*filters section*/
@@ -94,6 +99,7 @@ header {
     width: 15%;
     margin: 20px 20px 20px 0;
     display: flex;
+    border-radius: 5px;
 }
   
 #dropdownMenuLinkBlue::placeholder {
@@ -114,7 +120,6 @@ header {
     height: 69px;
     text-align: start;
     padding: 2rem 0rem 2rem 1.3rem;
-    border-radius: 5px;
 }
 
 .filter_select:hover {
@@ -140,32 +145,34 @@ header {
 .dropdown-toggle {
     top: 0;
     align-items: center;
-    padding-right: 20px;
     justify-content: space-between;
     color: #fff;
+    background-color: transparent;
 }
-  
-/*.dropdown-toggle--rotate {
+
+.fa-solid, .fas {
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    color: #fff;
+    align-items: center;
+    display: flex;
+    padding-right: 15px;
+}
+
+.fas-solid_rotate {
     transform: rotate(180deg);
-}*/
+}
 
 .dropdown-menu {
-    width: 60%;
-}
-
-.element.style {
-    display: flex;
-    flex-direction: column;
+    width: 47%;
     flex-wrap: wrap;
-    max-height: 360px;
-    overflow: hidden;
     border-radius: 0 0 5px 5px; 
-    list-style-type: none;
+    border: none;
 }
 
-/*.dropdown-menu.show {
-    display: none;
-}*/
+.dropdown-menu.show {
+    display: flex;
+}
 
 .dropdown_menu_blue {
     background: #3282F7;
@@ -178,18 +185,16 @@ header {
 .dropdown_menu_red {
     background: #ED6454;
 }
-
 .dropdown-item {
     color: #fff;
-    
+    width: 30%;
 }
 
 .filter_select_research {
     border: none;
     color: #84B4FA;
-    width: 100%;
+    width: 50%;
     height:70px;
-    padding: 2rem;
     border-radius: 5px;
     text-decoration: none;
 }
@@ -200,7 +205,6 @@ header {
     margin: 20px 20px 20px 0;
     display: flex; 
 }
-
 
 /*recipes section*/
 .recipesContainer {
@@ -232,12 +236,21 @@ header {
     justify-content: space-between;
     display: flex;
     flex-direction: row;
-    align-items: baseline;
     margin-bottom: 1rem;
 }
 
 .card_name {
     margin: 0;
+}
+
+.time_part {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+}
+
+.timeImage {
+    width: 20px;
 }
 
 .card_time {
@@ -267,9 +280,31 @@ header {
 }
 
 .card_description {
-    height: 68px;
+    height: 67px;
     flex-wrap: wrap;
     width: 50%;
     overflow: hidden;
     text-overflow: ellipsis;
+}
+
+@media screen and (max-width: 1000px) {
+    .recipe_container {
+        width: 45%;
+    }
+
+    .card_body{
+        height: auto;
+        justify-content: center;
+    }
+    .card_title {
+        flex-direction: column;
+    }
+
+    .card_name {
+        flex-wrap: wrap;
+    }
+
+    .card_details {
+        flex-direction: column ;
+    }
 }
