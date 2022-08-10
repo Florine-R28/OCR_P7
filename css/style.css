@@ -164,7 +164,7 @@ header {
 }
 
 .dropdown-menu {
-    width: 47%;
+    width: 43%;
     flex-wrap: wrap;
     border-radius: 0 0 5px 5px; 
     border: none;
@@ -195,7 +195,7 @@ header {
     color: #84B4FA;
     width: 50%;
     height:70px;
-    border-radius: 5px;
+    border-radius: 5px 5px 0 0;
     text-decoration: none;
 }
 
