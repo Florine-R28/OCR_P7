@@ -13,12 +13,6 @@ function displayData(recipesData) {
     });
 }
 
-// function ChangeCSS()
-// {
-//     dropdownMenuLinkBlue.setAttribute("class", "filter_select_research");
-// }
-
-
 //step 2 : retrieve the data x insert it into the empty slots
 function init() {
     displayData(recipes);/*de recipes.js*/
