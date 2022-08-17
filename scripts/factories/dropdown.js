@@ -100,7 +100,7 @@ function displayUstensilsTagList(ustensils) {
         dropdownLinkElement.textContent = ustensil.toLowerCase();
 
         dropdownLinkElement.addEventListener('click', function(event) {
-            seclectedUstensilsTags.push(event.target.textContent);
+            selectedUstensilsTags.push(event.target.textContent);
             showSelectedTags(); 
         })
 

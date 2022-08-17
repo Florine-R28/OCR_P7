@@ -54,8 +54,8 @@ function showSelectedTags() {
     }
 
     // //ustensils
-    if (seclectedUstensilsTags.length !== 0 /*ou > à, le tableau contient qqc*/){
-        seclectedUstensilsTags.forEach((selectedUstensilTag, index/*à quel position il est*/) => {
+    if (selectedUstensilsTags.length !== 0 /*ou > à, le tableau contient qqc*/){
+        selectedUstensilsTags.forEach((selectedUstensilTag, index/*à quel position il est*/) => {
             const ustensilTagElement = document.createElement('span');
             ustensilTagElement.classList.add('tags_item');
             ustensilTagElement.classList.add('tags_item_red');
@@ -67,7 +67,7 @@ function showSelectedTags() {
             img.classList.add('img_cross');
 
             removeTagElement.addEventListener('click', (event) => {
-                seclectedUstensilsTags.splice(index, 1);
+                selectedUstensilsTags.splice(index, 1);
                 showSelectedTagsContainer.removeChild(ustensilTagElement);
             })
 

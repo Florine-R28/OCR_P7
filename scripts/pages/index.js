@@ -1,17 +1,9 @@
 const selectedIngredientsTags = []; 
-const seclectedUstensilsTags = [];
+const selectedUstensilsTags = [];
 const selectedAppliancesTags = [];
+const search_bar = document.getElementById('searchBar');
 
-//step 1 : create an empty model
-function displayData(recipesData) {
-    const recipeSection = document.getElementById("recipesContainer");
-
-    recipesData.forEach((cardData) => {
-        const recipeModel = cardFactory(cardData); 
-        const recipeCardDOM = recipeModel.getRecipeCardDOM();
-        recipeSection.appendChild(recipeCardDOM);
-    });
-}
+//step 1 : in helpers/recipes.js
 
 //step 2 : retrieve the data x insert it into the empty slots
 function init() {
@@ -19,7 +11,7 @@ function init() {
     displayIngredientsTagList(getAllIngredients());
     displayApplianceTagList(getAllApliance());
     displayUstensilsTagList(getAllUstensils());
-    //ChangeCSS(dropdownMenuLinkBlue)
+    search_bar.addEventListener("keyup",(event) => selectedRecipes(event, selectedIngredientsTags, selectedUstensilsTags, selectedAppliancesTags));
 }
 
 //step 3 : start it all

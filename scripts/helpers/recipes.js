@@ -1,3 +1,15 @@
+//create an empty model
+function displayData(recipesData) {
+    const recipeSection = document.getElementById("recipesContainer");
+    recipeSection.innerHTML = "";
+
+    recipesData.forEach((cardData) => {
+        const recipeModel = cardFactory(cardData); 
+        const recipeCardDOM = recipeModel.getRecipeCardDOM();
+        recipeSection.appendChild(recipeCardDOM);
+    });
+}
+
 //ingredients
 function getAllIngredients() {
     const ingredientsList = [];
