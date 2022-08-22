@@ -16,8 +16,10 @@ function displayIngredientsTagList(ingredients) {
         dropdownLinkElement.textContent = ingredient.toLowerCase();
 
         dropdownLinkElement.addEventListener('click', function(event) {
-            selectedIngredientsTags.push(event.target.textContent)
+            selectedIngredientsTags.push(event.target.textContent);
             showSelectedTags(); 
+            const search_bar = document.getElementById('searchBar');
+            toFilterRecipes(search_bar.value, selectedIngredientsTags, selectedUstensilsTags, selectedAppliancesTags);
         }) 
 
         listElement.appendChild(dropdownLinkElement);
@@ -60,6 +62,8 @@ function displayApplianceTagList(appliance) {
         dropdownLinkElement.addEventListener('click', function(event) {
             selectedAppliancesTags.push(event.target.textContent);
             showSelectedTags(); 
+            const search_bar = document.getElementById('searchBar');
+            toFilterRecipes(search_bar.value, selectedIngredientsTags, selectedUstensilsTags, selectedAppliancesTags);
         })
 
         listElement.appendChild(dropdownLinkElement);
@@ -101,7 +105,9 @@ function displayUstensilsTagList(ustensils) {
 
         dropdownLinkElement.addEventListener('click', function(event) {
             selectedUstensilsTags.push(event.target.textContent);
-            showSelectedTags(); 
+            showSelectedTags();
+            const search_bar = document.getElementById('searchBar');
+            toFilterRecipes(search_bar.value, selectedIngredientsTags, selectedUstensilsTags, selectedAppliancesTags); 
         })
 
         listElement.appendChild(dropdownLinkElement);

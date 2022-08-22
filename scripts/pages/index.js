@@ -11,7 +11,13 @@ function init() {
     displayIngredientsTagList(getAllIngredients());
     displayApplianceTagList(getAllApliance());
     displayUstensilsTagList(getAllUstensils());
-    search_bar.addEventListener("keyup",(event) => selectedRecipes(event, selectedIngredientsTags, selectedUstensilsTags, selectedAppliancesTags));
+    search_bar.addEventListener("keyup",(event) => {
+        if (event.target.value.length >= 3) {
+           toFilterRecipes(event.target.value, selectedIngredientsTags, selectedUstensilsTags, selectedAppliancesTags)
+        } else if (event.target.value.length === 0){
+            displayData(recipes);
+        }
+    });
 }
 
 //step 3 : start it all

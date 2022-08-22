@@ -1,46 +1,60 @@
 // using the for loop
-function selectedRecipes(event, selectedIngredientsTags, selectedUstensilsTags, selectedAppliancesTags) {
+function toFilterRecipes(inputValue, selectedIngredientsTags, selectedUstensilsTags, selectedAppliancesTags) {
 	// les 2 dropdonw
-    if (event.target.value.length >= 3) {
         const results = [];
 
         for (let i = 0; i < recipes.length; i++) {
             const {name, ingredients, description, appliance, ustensils} = recipes[i];
-            const nameResearch = name.toLowerCase().includes(event.target.value.toLowerCase());
-            const descriptionResearch = description.toLowerCase().includes(event.target.value.toLowerCase());
+            const isIncludedInName = name.toLowerCase().includes(inputValue.toLowerCase());
+            const isIncludedInDescription = description.toLowerCase().includes(inputValue.toLowerCase());
+            const selectedTags = [...selectedIngredientsTags, ...selectedAppliancesTags, ...selectedUstensilsTags]; /*je mets le contenu des tableaux dans un tableau*/
 
-            let ingredientsResearch = false;
-            let applianceResearch = false;
-            let ustensilsResearch = false;
+            let isIncludedInIngredients = false;
+            let isIncludedInAppliance = false;
+            let isIncludedInUstensils = false;
+            let isIncludedInSelectedTags = false;
 
             //ingredients
             for (let y = 0; y < ingredients.length; y++) {
-                if (ingredients[y].ingredient.toLowerCase()/*nom de l'ingrédient*/.includes(event.target.value.toLowerCase())) {
-                    ingredientsResearch = true;
+                if (ingredients[y].ingredient.toLowerCase()/*nom de l'ingrédient*/.includes(inputValue.toLowerCase())) {
+                    isIncludedInIngredients = true;
                 }
             }
             //appliance
-            if (appliance.toLowerCase().includes(event.target.value.toLowerCase())) {
-                applianceResearch = true ;
+            if (appliance.toLowerCase().includes(inputValue.toLowerCase())) {
+                isIncludedInAppliance = true ;
             }
-                //ustensils
-                for (let y = 0; y < ustensils.length; y++) {
-                    if (ustensils[y]./*string directement*/toLowerCase().includes(event.target.value.toLowerCase())) {
-                    ustensilsResearch = true ; 
-                    }
-                }
-
-                //OU
-                if (nameResearch || descriptionResearch || ingredientsResearch || applianceResearch || ustensilsResearch) {
-                    results.push(recipes[i]);
+            //ustensils
+            for (let y = 0; y < ustensils.length; y++) {
+                if (ustensils[y]./*string directement*/toLowerCase().includes(inputValue.toLowerCase/*spé input*/())) {
+                    isIncludedInUstensils = true ; 
                 }
             }
 
-            if (results.length) {
-                /*recipesContainer.innerHTML = ""; est déjà placé dans recipeSection in helpers/recipes.js*/
-                displayData(results);
+            //que les tags
+            for(let y = 0; y < selectedTags.length; y++) {
+                if (ingredients.findIndex((ingredient) => ingredient/*parenthèse*/.ingredient/*nom de l'ingrédient*/.toLowerCase() === selectedTags[y].toLowerCase())> -1) {
+                    isIncludedInSelectedTags = true;
+                }
+
+                if (appliance === selectedTags[y]) { /*l'appapreil est-il dans le tableau de tags sélectionnés*/
+                    isIncludedInSelectedTags = true;
+                }
+
+                if (ustensils.findIndex((ustensil) => ustensil.toLowerCase() === selectedTags[y].toLowerCase())> -1) { /*si le tag est dans le tableau "ustensils"*/
+                    isIncludedInSelectedTags = true;
+                }
             }
-        } else if (event.target.value.length === 0) {
-            displayData(recipes);
+
+            //OU
+            if ((isIncludedInName || isIncludedInDescription || isIncludedInIngredients || isIncludedInAppliance || isIncludedInUstensils) && isIncludedInSelectedTags) {
+                results.push(recipes[i]);
+            }
         }
+
+        if (results.length) {
+            /*recipesContainer.innerHTML = ""; est déjà placé dans recipeSection in helpers/recipes.js*/
+            displayData(results);
+        }
+
 }
