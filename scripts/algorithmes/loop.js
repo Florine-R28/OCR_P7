@@ -1,6 +1,6 @@
 // using the for loop
 function toFilterRecipes(inputValue, selectedIngredientsTags, selectedUstensilsTags, selectedAppliancesTags) {
-	// les 2 dropdonw
+	// les 2 dropdown
         const results = [];
 
         for (let i = 0; i < recipes.length; i++) {
@@ -8,7 +8,7 @@ function toFilterRecipes(inputValue, selectedIngredientsTags, selectedUstensilsT
             const isIncludedInName = name.toLowerCase().includes(inputValue.toLowerCase());
             const isIncludedInDescription = description.toLowerCase().includes(inputValue.toLowerCase());
             const selectedTags = [...selectedIngredientsTags, ...selectedAppliancesTags, ...selectedUstensilsTags]; /*je mets le contenu des tableaux dans un tableau*/
-
+            
             let isIncludedInIngredients = false;
             let isIncludedInAppliance = false;
             let isIncludedInUstensils = false;
@@ -32,20 +32,24 @@ function toFilterRecipes(inputValue, selectedIngredientsTags, selectedUstensilsT
             }
 
             //que les tags
-            for(let y = 0; y < selectedTags.length; y++) {
-                if (ingredients.findIndex((ingredient) => ingredient/*parenthèse*/.ingredient/*nom de l'ingrédient*/.toLowerCase() === selectedTags[y].toLowerCase())> -1) {
-                    isIncludedInSelectedTags = true;
-                }
+            if (selectedTags.length === 0) {
+                isIncludedInSelectedTags = true;
+            } else {
+                for(let y = 0; y < selectedTags.length; y++) {
+                    if (ingredients.findIndex((ingredient) => ingredient/*parenthèse*/.ingredient/*nom de l'ingrédient*/.toLowerCase() === selectedTags[y].toLowerCase())> -1) {
+                        isIncludedInSelectedTags = true;
+                    }
 
-                if (appliance === selectedTags[y]) { /*l'appapreil est-il dans le tableau de tags sélectionnés*/
-                    isIncludedInSelectedTags = true;
-                }
+                    if (appliance === selectedTags[y]) { /*l'appapreil est-il dans le tableau de tags sélectionnés*/
+                        isIncludedInSelectedTags = true;
+                    }
 
-                if (ustensils.findIndex((ustensil) => ustensil.toLowerCase() === selectedTags[y].toLowerCase())> -1) { /*si le tag est dans le tableau "ustensils"*/
-                    isIncludedInSelectedTags = true;
+                    if (ustensils.findIndex((ustensil) => ustensil.toLowerCase() === selectedTags[y].toLowerCase())> -1) { /*si le tag est dans le tableau "ustensils"*/
+                        isIncludedInSelectedTags = true;
+                    }
                 }
             }
-
+            
             //OU
             if ((isIncludedInName || isIncludedInDescription || isIncludedInIngredients || isIncludedInAppliance || isIncludedInUstensils) && isIncludedInSelectedTags) {
                 results.push(recipes[i]);
